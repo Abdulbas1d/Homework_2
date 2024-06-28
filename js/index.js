@@ -168,3 +168,336 @@
 // Umuman olganda, Callback function funktsiyalari funktsional dasturlash va hodisalarga asoslangan arxitektura kabi zamonaviy dasturlash paradigmalarida hal qiluvchi rol o'ynaydi. Ular asenkron operatsiyalarni boshqarish, hodisalarga javob berish, kod modulligini targ'ib qilish va xatolarni samarali boshqarish uchun kuchli mexanizmni taqdim etadi.
 
 
+
+
+
+
+// Obyekt metodlariga oid masalalar.
+
+
+// 1-Misol
+
+// const someObject = {a: 1, b: 2, c: 3};
+// function getAllKeys(obj) {
+//   return Object.keys(obj);
+// }
+
+// const keys = getAllKeys(someObject);
+// console.log(keys);
+
+
+
+// 2-Misol
+
+// const object = {
+//     name: 'John',
+//     age: 30,
+//     city: 'New York'
+// };
+// function getAllValues(obj) {
+//     return Object.values(obj);
+// }
+
+// console.log(getAllValues(object));
+
+
+
+// 3-Misol
+
+// const someObject = { 
+//   name: 'John',
+//   age: 20,
+//   city: 'London'
+// };
+// function getAllKeyValue(obj) {
+//   return Object.entries(obj);
+// }
+
+// const keyValuePairs = getAllKeyValue(someObject);
+// console.log(keyValuePairs);
+
+
+
+// 4-Misol
+
+// const someObject = {name: "John", age: 30};
+
+// Object.freeze(someObject);
+
+// someObject.name = "Jane";
+// someObject.age = 40;
+
+// console.log(someObject);
+
+
+
+
+
+// Massiv metodlariga oid masalalar.
+
+
+// 1-Misol
+
+// const array = [1, 2, 3, 4, 5, 6, 7];
+// function sliceMiddleThree(arr) {
+//     if (arr.length < 5) {
+//         return "Array is too small to slice middle 3 elements";
+//     }
+    
+//     const start = Math.floor(arr.length / 2) - 1;
+    
+//     return arr.slice(start, start + 3);
+// }
+
+// console.log(sliceMiddleThree(array));
+
+
+
+
+// 2-Misol
+
+// function spliceValues(arr, numAdd, index) {
+//     for (let i = 0; i < numAdd; i++) {
+//         const randomNum = Math.floor(Math.random() * 90 + 10);
+//         arr.splice(index + i, 0, randomNum);
+//     }
+    
+//     return arr;
+// }
+
+// const array = [1, 2, 3, 4, 5];
+// const newArray = spliceValues(array, 3, 2);
+// console.log(newArray);
+
+
+
+
+// 3-Misol
+
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5, 6];
+// const array3 = [7, 8, 9];
+// function concatArrays(arr1, arr2, arr3) {
+//   return arr1.concat(arr3, arr2);
+// }
+
+// const concatenatedArray = concatArrays(array1, array2, array3);
+// console.log(concatenatedArray);
+
+
+
+
+// 4-Misol
+
+// function indexCube(arr, value) {
+//     const index = arr.indexOf(value);
+//     if (index !== -1) {
+//         return index ** 3;
+//     } else {
+//         return false;
+//     }
+// }
+
+// const array = [1, 2, 3, 4, 5];
+// console.log(indexCube(array, 3));
+
+
+
+
+// 5-Misol
+
+// function lastIndexOf(arr, element) {
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     if (arr[i] === element) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// const array = [1, 2, 3, 4, 2];
+// const elementToSearch = 2;
+// console.log(lastIndexOf(array, elementToSearch));
+
+
+
+
+// 6-Misol
+
+// function checkArrays(arr1, arr2, element) {
+//   let someArray = arr1.concat(arr2);
+  
+//   return someArray.indexOf(element) !== -1 && arr1.indexOf(element) !== -1 && arr2.indexOf(element) !== -1;
+// }
+
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5, 6];
+// const elementToSearchFor = 3;
+
+// console.log(checkArrays(array1, array2, elementToSearchFor));
+
+
+
+
+// 7-Misol
+
+// function searchElement(arr, element) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === element) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// const array = [1, 2, 3, 4, 5];
+// const elementToSearch = 3;
+
+// if (searchElement(array, elementToSearch)) {
+//     console.log(`Element ${elementToSearch} found in the array`);
+// } else {
+//     console.log(`Element ${elementToSearch} not found in the array`);
+// }
+
+
+
+
+// 8-Misol
+
+// function averageOdd(numbers) {
+//     let oddThreeDigits = numbers.filter(num => num % 2 !== 0 && num.toString().length === 3);
+    
+//     let sum = 0;
+//     let count = 0;
+    
+//     oddThreeDigits.forEach(num => {
+//         sum += num;
+//         count++;
+//     });
+    
+//     if (count === 0) {
+//         return "No odd three-digit numbers found";
+//     }
+    
+//     return sum / count;
+// }
+
+// const numbers = [123, 456, 789, 321, 654, 987];
+// console.log(averageOdd(numbers));
+
+
+
+
+// 9-Misol
+
+// function transformArray(arr) {
+//     const oddCubes = arr.filter(num => num % 2 !== 0).map(num => Math.pow(num, 3));
+//     const evenSquares = arr.filter(num => num % 2 === 0).map(num => Math.pow(num, 2));
+
+//     return { oddCubes, evenSquares };
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+// const transformedArrays = transformArray(numbers);
+
+// console.log("Original Array:", numbers);
+// console.log("Odd elements cubed:", transformedArrays.oddCubes);
+// console.log("Even elements squared:", transformedArrays.evenSquares);
+
+
+
+
+// 10-Misol
+
+// function getLastElements(arr) {
+//   return arr.map(entry => entry[entry.length - 1]);
+// }
+
+// const entries = [[1, 2, 3], ['a', 'b', 'c'], [true, false]];
+// const result = getLastElements(entries);
+
+// console.log(result);
+
+
+
+
+// 11-Misol
+
+// const entries = ['apple', 'banana', 'car', 'dog', 'cherry'];
+// function filterEntries(arr) {
+//   return arr.filter(entry => entry.length >= 4);
+// }
+
+// const filteredEntries = filterEntries(entries);
+// console.log(filteredEntries);
+
+
+
+// 12-Misol
+
+// let user = [
+//     { name: 'John', age: 5 },
+//     { name: 'Doe', age: 20 },
+//     { name: 'Alex', age: 50 }
+// ];
+// function findAge18(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].age > 18) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// const result = findAge18(user);
+// console.log(result);
+
+
+
+
+// 13-Misol
+
+// function findNameJohn(names) {
+//     return names.every(name => name.toLowerCase().endsWith('john'));
+// }
+
+// const uzbekNames = ['Abdulajon', 'Mahmudjon', 'Jamalxon'];
+// console.log(findNameJohn(uzbekNames));
+
+// const otherNames = ['Ali', 'Sara', 'Diana'];
+// console.log(findNameJohn(otherNames)); 
+
+
+
+
+// 14-Misol
+
+// function findElement(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] >= 100 && arr[i] <= 999 && arr[i] % 5 === 0) {
+//             return arr[i];
+//         }
+//     }
+//     return "No element found";
+// }
+
+// const numbers = [105, 220, 315, 430];
+// const result = findElement(numbers);
+// console.log(result);
+
+
+
+
+// 15-Misol
+
+// function findIndex(names) {
+//     for (let i = 0; i < names.length; i++) {
+//         if (names[i].toLowerCase().includes("back")) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
+// const names = ["John Backer", "Alice Backman", "Michael Jackson"];
+// console.log(findIndex(names)); 
